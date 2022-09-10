@@ -105,9 +105,9 @@ object Dependencies {
     val dockerJavaTransport =
       "com.github.docker-java" % "docker-java-transport-httpclient5" % V.dockerJava
 
-    val ip4s = "com.comcast" %% "ip4s-core" % V.ip4s
-    val csv = "org.gnieh" %% "fs2-data-csv" % V.fs2Csv
-    val csvGeneric = "org.gnieh" %% "fs2-data-csv-generic" % V.fs2Csv
+    val ip4s       = "com.comcast" %% "ip4s-core"            % V.ip4s
+    val csv        = "org.gnieh"   %% "fs2-data-csv"         % V.fs2Csv
+    val csvGeneric = "org.gnieh"   %% "fs2-data-csv-generic" % V.fs2Csv
 
   }
 

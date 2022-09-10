@@ -14,12 +14,15 @@ object StreamingCSVSuite extends SimpleIOSuite with Checkers:
 
   case class Line(string: String, integer: Int)
 
-  def makeLines(n: Int): String = (1 to n).map((i: Int) => Line(i.toString, i)).mkString("\n")
+  def makeLines(n: Int): String =
+    "string,integer\n" + (1 to n).map((i: Int) => s"$i,$i").mkString("\n")
+
+  implicit val myRowDecoder: CsvRowDecoder[Line, String] = deriveCsvRowDecoder
 
   test("CSV stream is parsed") {
-    implicit val myRowDecoder: CsvRowDecoder[Line, String] = deriveCsvRowDecoder
+    val n = 10
     for {
       count <-
-        StreamingCSV.toT[Line](new ByteArrayInputStream(makeLines(100).getBytes())).compile.count
-    } yield expect.same(count, 100)
+        StreamingCSV.toT[Line](new ByteArrayInputStream(makeLines(n).getBytes())).compile.count
+    } yield expect.same(count, n)
   }
