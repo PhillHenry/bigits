@@ -41,6 +41,8 @@ val commonSettings = List(
     Libraries.refinedCore.value,
     Libraries.refinedCats.value,
     Libraries.ip4s,
+    Libraries.csv,
+    Libraries.csvGeneric,
     Libraries.logBack,
     Libraries.monocleLaw          % Test,
     Libraries.scalacheck          % Test,

@@ -33,6 +33,9 @@ object Dependencies {
 
     val dockerJava = "3.2.13"
     val ip4s       = "3.1.3"
+
+    val fs2Csv = "1.5.0"
+
   }
 
   object Libraries {
@@ -103,6 +106,8 @@ object Dependencies {
       "com.github.docker-java" % "docker-java-transport-httpclient5" % V.dockerJava
 
     val ip4s = "com.comcast" %% "ip4s-core" % V.ip4s
+    val csv = "org.gnieh" %% "fs2-data-csv" % V.fs2Csv
+    val csvGeneric = "org.gnieh" %% "fs2-data-csv-generic" % V.fs2Csv
 
   }
 
