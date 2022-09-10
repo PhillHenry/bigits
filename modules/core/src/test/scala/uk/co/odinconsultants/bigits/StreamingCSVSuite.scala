@@ -4,7 +4,6 @@ import weaver.{FunSuite, SimpleIOSuite}
 import weaver.scalacheck.Checkers
 import cats.effect.IO
 import cats.data.NonEmptyList
-import uk.co.odinconsultants.mss.StreamingWordCount
 import fs2.data.csv.*
 import fs2.data.csv.generic.semiauto.*
 
