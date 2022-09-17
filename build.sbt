@@ -64,9 +64,9 @@ def dockerSettings(name: String) = List(
 
 lazy val root = (project in file("."))
   .settings(
-    name := "modernstack"
+    name := "bigits"
   )
-  .aggregate(lib, core, it)
+  .aggregate(lib, core, aws, it)
 
 lazy val lib = (project in file("modules/lib"))
   .settings(commonSettings: _*)
@@ -74,6 +74,15 @@ lazy val lib = (project in file("modules/lib"))
 lazy val core = (project in file("modules/core"))
   .settings(commonSettings: _*)
   .dependsOn(lib)
+
+lazy val aws = (project in file("modules/aws"))
+  .settings(commonSettings: _*)
+  .dependsOn(core)
+  .settings(
+    libraryDependencies ++= List(
+//      "io.laserdisc" %% "fs2-aws" % "5.0.2"
+    )
+  )
 
 // integration tests
 lazy val it = (project in file("modules/it"))
