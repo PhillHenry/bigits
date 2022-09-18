@@ -36,6 +36,7 @@ object Dependencies {
 
     val fs2Csv = "1.5.0"
 
+    val AwsSdk           = "2.17.259"
   }
 
   object Libraries {

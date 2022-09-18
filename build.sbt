@@ -81,7 +81,8 @@ lazy val aws = (project in file("modules/aws"))
   .dependsOn(core)
   .settings(
     libraryDependencies ++= List(
-      "io.laserdisc" %% "fs2-aws-s3" % "5.0.2"
+      "io.laserdisc"          %% "fs2-aws-s3" % "5.0.2",
+      "software.amazon.awssdk" % "s3"         % V.AwsSdk,
     )
   )
 
