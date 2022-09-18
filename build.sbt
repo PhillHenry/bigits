@@ -9,6 +9,7 @@ ThisBuild / evictionErrorLevel := Level.Warn
 ThisBuild / scalafixDependencies += Libraries.organizeImports
 
 ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
+ThisBuild / resolvers += Resolver.mavenCentral
 
 Compile / run / fork           := true
 
@@ -80,7 +81,7 @@ lazy val aws = (project in file("modules/aws"))
   .dependsOn(core)
   .settings(
     libraryDependencies ++= List(
-//      "io.laserdisc" %% "fs2-aws" % "5.0.2"
+      "io.laserdisc" %% "fs2-aws-s3" % "5.0.2"
     )
   )
 
